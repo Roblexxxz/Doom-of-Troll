@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doom of Troll Menu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* Title Box */
+        .title-box {
+            background-color: #9b6bf3;
+            border: 3px solid #000000;
+            color: #000000;
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        /* Interactive Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            font-size: 2.2rem;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: opacity 0.1s ease, transform 0.1s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.99);
+        }
+
+        .btn-play {
+            background-color: #3b82f6;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .btn-settings {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="title-box">DOOM OF TROLL</div>
+
+        <button class="btn btn-play" onclick="handlePlayClick()">PLAY</button>
+
+        <button class="btn btn-settings" onclick="handleSettingsClick()">Settings</button>
+    </div>
+
+    <script>
+        // Placeholder functions for button functionality
+        function handlePlayClick() {
+            alert("Play button clicked!");
+            // Add your code here for what happens when PLAY is pressed
+        }
+
+        function handleSettingsClick() {
+            alert("Settings button clicked!");
+            // Add your code here for what happens when Settings is pressed
+        }
+    </script>
+
+</body>
+</html>

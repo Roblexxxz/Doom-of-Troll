@@ -5,95 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doom of Troll Menu</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { 
+            background-color: #ffffff; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            overflow: hidden;
         }
 
-        body {
-            background-color: #ffffff;
+        /* --- MENU STYLES --- */
+        .menu-container { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            width: 100%; 
+            max-width: 600px; 
+            padding: 20px; 
+        }
+        .title-box { 
+            background-color: #9b6bf3; 
+            border: 3px solid #000000; 
+            color: #000000; 
+            font-size: 2.5rem; 
+            font-weight: bold; 
+            padding: 15px; 
+            width: 100%; 
+            text-align: center; 
+            margin-bottom: 30px;
+            box-shadow: 4px 4px 0px #000000;
+        }
+        .play-button {
+            background-color: #ffde59;
+            border: 3px solid #000000;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 15px 40px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #000000;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .play-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        /* --- GAMEPLAY STYLES --- */
+        .game-container {
+            display: none; /* Hidden by default */
+            width: 100vw;
+            height: 100vh;
+            background-color: #222;
+            position: relative;
+            color: white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: 3px solid #000000;
+            font-size: 2rem;
+            font-weight: bold;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            box-shadow: 2px 2px 0px #000000;
+            transition: transform 0.1s;
         }
-
-        .menu-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
+        .back-button:hover {
+            background-color: #ff1a1a;
         }
-
-        /* Title Box */
-        .title-box {
-            background-color: #9b6bf3;
-            border: 3px solid #000000;
-            color: #000000;
-            font-size: 2.5rem;
-            font-weight: bold;
-            padding: 15px;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        /* Interactive Buttons */
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            font-size: 2.2rem;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            transition: opacity 0.1s ease, transform 0.1s ease;
-        }
-
-        .btn:active {
-            transform: scale(0.99);
-        }
-
-        .btn-play {
-            background-color: #3b82f6;
-            color: #000000;
-            margin-bottom: 20px;
-        }
-
-        .btn-settings {
-            background-color: #000000;
-            color: #ffffff;
+        .back-button:active {
+            transform: translate(1px, 1px);
         }
     </style>
 </head>
 <body>
 
-    <div class="menu-container">
-        <div class="title-box">DOOM OF TROLL</div>
+    <!-- Menu Screen -->
+    <div class="menu-container" id="menuScreen">
+        <div class="title-box">Doom of Troll</div>
+        <button class="play-button" onclick="startGame()">PLAY</button>
+    </div>
 
-        <button class="btn btn-play" onclick="handlePlayClick()">PLAY</button>
-
-        <button class="btn btn-settings" onclick="handleSettingsClick()">Settings</button>
+    <!-- Game Screen -->
+    <div class="game-container" id="gameScreen">
+        <button class="back-button" onclick="backToMenu()">X</button>
+        <h1>Game is running!</h1>
+        <p>Your game content goes here.</p>
     </div>
 
     <script>
-        // Placeholder functions for button functionality
-        function handlePlayClick() {
-            alert("Play button clicked!");
-            // Add your code here for what happens when PLAY is pressed
+        function startGame() {
+            // Hide the menu and show the game
+            document.getElementById('menuScreen').style.display = 'none';
+            document.getElementById('gameScreen').style.display = 'flex';
         }
 
-        function handleSettingsClick() {
-            alert("Settings button clicked!");
-            // Add your code here for what happens when Settings is pressed
+        function backToMenu() {
+            // Hide the game and show the menu
+            document.getElementById('gameScreen').style.display = 'none';
+            document.getElementById('menuScreen').style.display = 'flex';
         }
     </script>
-
 </body>
 </html>

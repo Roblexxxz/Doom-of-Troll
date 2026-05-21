@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doom of Troll Menu</title>
+    
+    <link rel="icon" type="image/png" href="IMG_1797.png">
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
         body { 
@@ -25,19 +28,16 @@
             padding: 20px; 
         }
         .title-box { 
+            background-color: #9b6bf3; 
             border: 3px solid #000000; 
+            color: #000000; 
+            font-size: 2.5rem; 
+            font-weight: bold; 
+            padding: 15px; 
             width: 100%; 
+            text-align: center; 
             margin-bottom: 30px;
             box-shadow: 4px 4px 0px #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .title-box img {
-            width: 100%;
-            height: auto;
-            display: block;
         }
         .play-button {
             background-color: #ffde59;
@@ -96,9 +96,7 @@
 <body>
 
     <div class="menu-container" id="menuScreen">
-        <div class="title-box">
-            <img src="your-image-url-here.png" alt="Doom of Troll">
-        </div>
+        <div class="title-box">Doom of Troll</div>
         <button class="play-button" onclick="startGame()">PLAY</button>
     </div>
 

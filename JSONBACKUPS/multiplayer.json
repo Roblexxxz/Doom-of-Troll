@@ -1,12 +1,16 @@
-[
-  {"data:
-    {"name:
-{"connect:
-      [
-        {"connection:
- {"network:
-          {"phythonconnection":
-            {"terminal:
-            {"main:
- {"main.ph":
-              [json
+{
+  "data": {
+    "name": "connect",
+    "connections": [
+      {
+        "network": {
+          "python_connection": {
+            "terminal": {
+              "main": "main.py"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

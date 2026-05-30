@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="icon" type="image/png" href="IMG_1797.png">
     <title>Doom of Troll Menu</title>
-
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
         body { 
@@ -17,8 +15,6 @@
             height: 100vh; 
             overflow: hidden;
         }
-
-        /* --- MENU STYLES --- */
         .menu-container { 
             display: flex; 
             flex-direction: column; 
@@ -39,8 +35,14 @@
             margin-bottom: 30px;
             box-shadow: 4px 4px 0px #000000;
         }
-        .play-button {
-            background-color: #ffde59;
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            align-items: center;
+        }
+        .play-button, .friends-button {
             border: 3px solid #000000;
             font-size: 2rem;
             font-weight: bold;
@@ -48,15 +50,19 @@
             cursor: pointer;
             box-shadow: 4px 4px 0px #000000;
             transition: transform 0.1s, box-shadow 0.1s;
+            width: 80%;
+            text-align: center;
+            text-decoration: none;
+            color: black;
         }
-        .play-button:active {
+        .play-button { background-color: #ffde59; }
+        .friends-button { background-color: #5ce1e6; }
+        .play-button:active, .friends-button:active {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0px #000000;
         }
-
-        /* --- GAMEPLAY STYLES --- */
         .game-container {
-            display: none; /* Hidden by default */
+            display: none;
             width: 100vw;
             height: 100vh;
             background-color: #222;
@@ -85,21 +91,21 @@
             box-shadow: 2px 2px 0px #000000;
             transition: transform 0.1s;
         }
-        .back-button:hover {
-            background-color: #ff1a1a;
-        }
-        .back-button:active {
-            transform: translate(1px, 1px);
-        }
     </style>
 </head>
 <body>
 
+    <!-- MENU SCREEN -->
     <div class="menu-container" id="menuScreen">
         <div class="title-box">Doom of Troll</div>
-        <button class="play-button" onclick="startGame()">PLAY</button>
+        <div class="button-group">
+            <button class="play-button" onclick="startGame()">PLAY</button>
+            <!-- Redirects into your subfolder structure -->
+            <a href="multiplayer/friends/friends.html" class="friends-button">FRIENDS</a>
+        </div>
     </div>
 
+    <!-- GAME SCREEN -->
     <div class="game-container" id="gameScreen">
         <button class="back-button" onclick="backToMenu()">X</button>
         <h1>Game is running!</h1>
@@ -108,13 +114,10 @@
 
     <script>
         function startGame() {
-            // Hide the menu and show the game
             document.getElementById('menuScreen').style.display = 'none';
             document.getElementById('gameScreen').style.display = 'flex';
         }
-
         function backToMenu() {
-            // Hide the game and show the menu
             document.getElementById('gameScreen').style.display = 'none';
             document.getElementById('menuScreen').style.display = 'flex';
         }
